@@ -71,8 +71,8 @@ struct Seesaw : Module {
 		bool shouldReset = resetTrigger.process(inputs[RESET_INPUT].getVoltage() + params[RESET_PARAM].getValue());
 		bool shouldClock = clockTrigger.process(inputs[CLOCK_INPUT].getVoltage() + params[CLOCK_PARAM].getValue());
 
-		int stepsForA = inputs[STEPS_A_INPUT].isConnected() ? clamp(floor(inputs[STEPS_A_INPUT].getVoltage()), 0, 9) : params[STEPS_A_PARAM].getValue();
-		int stepsForB = inputs[STEPS_B_INPUT].isConnected() ? clamp(floor(inputs[STEPS_B_INPUT].getVoltage()), 0, 9) : params[STEPS_B_PARAM].getValue();
+		int stepsForA = inputs[STEPS_A_INPUT].isConnected() ? clamp((int) floor(inputs[STEPS_A_INPUT].getVoltage()), (int) 0, (int) 9) : params[STEPS_A_PARAM].getValue();
+		int stepsForB = inputs[STEPS_B_INPUT].isConnected() ? clamp((int) floor(inputs[STEPS_B_INPUT].getVoltage()), (int) 0, (int) 9) : params[STEPS_B_PARAM].getValue();
 
 		int channelsForA = inputs[A_INPUT].getChannels();
 		int channelsForB = inputs[B_INPUT].getChannels();

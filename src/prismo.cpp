@@ -131,7 +131,7 @@ struct Prismo : Module {
 			}
 			lights[ONE_LIGHT].setBrightness(1);
 		}	else if(shouldClock) {
-			int steps = inputs[STEPS_INPUT].isConnected() ? clamp(floor(inputs[STEPS_INPUT].getVoltage()), 1, 8) : params[STEPS_PARAM].getValue();
+			int steps = inputs[STEPS_INPUT].isConnected() ? clamp((int) floor(inputs[STEPS_INPUT].getVoltage()), (int) 1, (int) 8) : params[STEPS_PARAM].getValue();
 
 			currentStep = (currentStep + 1) % steps;
 
